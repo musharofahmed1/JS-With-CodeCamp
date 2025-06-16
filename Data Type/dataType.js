@@ -36,5 +36,10 @@ labels or identifiers for properties:*/
 // Creating two symbols
 const symbol1 = Symbol('mySymbol');
 const symbol2 = Symbol('mySymbol');
-console.log(symbol1);
+// console.log(symbol1);
 console.log(symbol1 === symbol2); // Outputs: false
+
+let developer = "Jessica";
+developer = "Quincy";
+
+console.log(developer)
