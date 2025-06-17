@@ -29,3 +29,17 @@ let str2 = 'World';
 
 let result = str1.concat(' ', str2); 
 console.log(result); // Hello World
+
+//ASCII char to ASCII value
+let letter = "A";
+console.log(letter.charCodeAt(0));  // Output: 65
+
+//ASCII Value to Char
+let char = String.fromCharCode(65);
+console.log(char);  // Output: A
+
+//slice method
+let sentence = "Learning JavaScript is fun!";
+let extracted = sentence.slice(9, -5);
+
+console.log(extracted);
