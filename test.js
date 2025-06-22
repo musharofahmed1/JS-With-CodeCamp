@@ -199,5 +199,25 @@ function isObject(obj) {
 // let obj = { name: "John", age: 30 };
 // console.log(obj.toString());
 
-let arr = new Array(3);
-console.log(arr);
+// let arr = new Array(3);
+// console.log(arr);
+// var x = 10;
+
+// if (true) {
+//   var x = 20;
+//   console.log(x);
+// }
+
+// console.log(x);
+
+function trackTotal(initialValue) {
+  let total = initialValue;
+  return function(increment) {
+    total += increment;
+    return total;
+  };
+}
+
+let track = trackTotal(1);
+console.log(track(2));
+console.log(track(3));
