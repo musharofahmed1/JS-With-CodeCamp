@@ -68,12 +68,136 @@
 // console.log(car.year);
 // let obj = {a: undefined};
 // console.log(obj.a !== undefined);
-let person = {
-    name: "Alice",
-    details: {
-        age: 25,
-        hobbies: ["reading", "swimming"]
-    }
-};
+// let person = {
+//     name: "Alice",
+//     details: {
+//         age: 25,
+//         hobbies: ["reading", "swimming"]
+//     }
+// };
 
-console.log(person.details.hobbies[1]);
+// console.log(person.details.hobbies[1]);
+
+// 1. You should access the averageRating property of recipe1.
+// 2. You should assign the result of calling getAverageRating with recipe1.ratings to the averageRating property of recipe1.
+// 3. You should access the totalIngredients property of recipe1.
+// 4. You should assign the result of calling getTotalIngredients with recipe1.ingredients to the totalIngredients property of recipe1.
+// 5. You should access the difficultyLevel property of recipe1.
+// 6. You should assign the result of calling getDifficultyLevel with recipe1.cookingTime to the cookingTime property of recipe1.
+// recipe1.averageRating = recipe1.ratings;
+// recipe1.ratings = recipe1AverageRating;
+// recipe1.totalIngredients;
+// recipe1.ingredients = recipe1TotalIngredients;
+// recipe1.difficultyLevel;
+// recipe1.cookingTime = recipe1DifficultyLevel;
+
+// const fruits = ['apple', 'banana', 'cherry'];
+
+// for (let fruit of fruits) {
+//   console.log(fruit.toUpperCase());
+// }
+
+// const fruit = {
+//   name: 'apple',
+//   color: 'red',
+//   price: 0.99
+// };
+
+// for (const prop in fruit) {
+//   console.log(fruit[prop]);
+// }
+// const person = {
+//   name: 'John',
+//   age: 30,
+//   address: {
+//     street: '123 Main St',
+//     city: 'Anytown',
+//     state: 'CA'
+//   }
+// };
+
+// for (const prop in person) {
+//   console.log(person[prop]);
+// }
+
+function isObject(obj) {
+  return typeof obj === 'object' && !Array.isArray(obj) && obj !== null;
+}
+
+// for (const prop in person) {
+//   if (isObject(person[prop])) {
+//     for (const nestedProp in person[prop]) {
+//       console.log(person[prop][nestedProp]);
+//     }
+//   } else {
+//     console.log(person[prop]);
+//   }
+// }
+// const fruit = {
+//   name: 'apple',
+//   color: 'red',
+//   price: 0.99
+// };
+
+// for (const prop in fruit) {
+//   console.log(fruit[prop]);
+// }
+
+// function getWordCount(sentence){
+//   let count = 1;
+//   let word = " ";
+//   for(let char of sentence){
+//     if(word.includes(char)){
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(getWordCount("Musa A Musa"));
+// let num = 5;
+
+// function factorialCalculator(num){
+//   let result = 1;
+//   for(let i = 1; i <= num; i++){
+//     result *= i;
+//   }
+//  return result;
+// }
+
+// let resultMsg = factorialCalculator(`Factorial of ${num} is ${factorial}`);
+// console.log(resultMsg);
+// for (let i = 0; i < 25; i += 2) {
+//   if (i % 5 === 0) {
+//     continue;
+//   }
+//   if (i % 13 === 0) {
+//     break;
+//   }
+//   console.log(i);
+// }
+// const shoppingList = { tomatoes: 4, apples: 10 };
+// for (const item in shoppingList) {
+//   console.log(item);
+// }
+// for (let i = 1; i <= 13; i++) {
+//   console.log(i);
+// }
+// //1,2..
+// for (let i = 2; i <= 13; i++) {
+//   if (i % 2 === 0) continue;
+//   console.log(i);
+// }
+// const fruits = ["Mango", "Pineapple", "Oranges"];
+// for (const fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// let x = 0
+// while (x < 5) {
+//   console.log("in the loop");
+// }
+// let obj = { name: "John", age: 30 };
+// console.log(obj.toString());
+
+let arr = new Array(3);
+console.log(arr);
