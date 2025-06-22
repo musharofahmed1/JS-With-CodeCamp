@@ -6,7 +6,7 @@ function getAverage(testScore){
     }
     return totalScore / testScore.length;
 }
-
+// console.log(getAverage([56,76,88])) //perfectly works
 //create getGrade function
 
 function getGrade(studentScore){
@@ -33,4 +33,17 @@ function getGrade(studentScore){
     }
 }
 
-console.log(getGrade(96)); //perfectly works the function
+// console.log(getGrade(96)); //perfectly works the function
+
+//create hasPassingGrade
+function hasPassingGrade(score){
+
+    if(getGrade(score)== "F"){
+        return "F"
+    }
+    else{
+        return getGrade(score);
+    }
+}
+
+console.log(hasPassingGrade(66));
