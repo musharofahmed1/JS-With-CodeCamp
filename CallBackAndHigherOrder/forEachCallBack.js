@@ -1,3 +1,5 @@
+//forEach does not return anything
+//if I try to return It will give Undefined
 //way one
 let numbers = [1, 2, 3, 4, 5];
 

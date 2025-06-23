@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Learning Playground</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .box {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="page-title">Welcome to My DOM Practice Page</h1>
+
+  <section id="introduction">
+    <p class="intro-text">This is a simple paragraph for practice.</p>
+    <p class="intro-text">Another paragraph with the same class.</p>
+  </section>
+
+  <div id="content-section">
+    <h2 class="section-title">Main Content Area</h2>
+    <div class="box" id="box1">Box 1 Content</div>
+    <div class="box" id="box2">Box 2 Content</div>
+    <div class="box" id="box3">Box 3 Content</div>
+  </div>
+
+  <section id="list-section">
+    <h2 class="section-title">Item List</h2>
+    <ul id="item-list">
+      <li class="list-item">Item 1</li>
+      <li class="list-item">Item 2</li>
+      <li class="list-item">Item 3</li>
+    </ul>
+  </section>
+
+  <footer id="page-footer">
+    <p>© 2025 All Rights Reserved.</p>
+  </footer>
+
+  <!--JavaScript Inside HTML-->
+  <script>
+    console.log("Js inside html");
+    //access html tag 
+    const items = document.getElementById("item-list");
+    // items.innerHTML = "<ul><li>Cheese</li><li>Tomato</li></ul>";
+    console.log(items);
+    const sectionTitle = document.querySelectorAll("section-title");
+    console.log(sectionTitle)
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

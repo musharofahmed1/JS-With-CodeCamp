@@ -23,12 +23,4 @@ function getTotalPages(booksPages){
  return result;
 }
 
-const libraryBooks = displayBooks(library);
-const bookSummaries = getBookSummaries(library);
-const booksByArvidKahl = getBooksByAuthor(library, "Arvid Kahl");
-const totalPagesOfBooksInLibrary = getTotalPages(library);
 
-console.log(libraryBooks);
-console.log(bookSummaries);
-console.log(booksByArvidKahl);
-console.log(totalPagesOfBooksInLibrary);

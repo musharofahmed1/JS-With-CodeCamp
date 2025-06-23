@@ -1,23 +1,25 @@
 function pyramid(sign, n, userChoose) {
+    let result = "\n";
+
     if (userChoose == false) {
-        // number of rows
-        for (let i = 1; i <= n; i++) {
-            let row = "";
-
-            // add spaces
-            for (let j = n - i; j > 0; j--) {
-                row += " ";
-            }
-
-            // add signs
-            for (let k = 1; k <= i; k+=2) {
-                row += `${sign} `;
-            }
-
-            console.log(row);
+        // Vertex up
+        for (let i = 0; i < n; i++) {
+            let spaces = " ".repeat(n - i - 1);
+            let signs = sign.repeat(1 + 2 * i);
+            result += spaces + signs + "\n";
+        }
+    } else {
+        // Vertex down
+        for (let i = n - 1; i >= 0; i--) {
+            let spaces = " ".repeat(n - i - 1);
+            let signs = sign.repeat(1 + 2 * i);
+            result += spaces + signs + "\n";
         }
     }
+
+    return result;
 }
 
-pyramid("*", 8, false);
-
+// Example call:
+console.log(pyramid("o", 4, false));
+ 
