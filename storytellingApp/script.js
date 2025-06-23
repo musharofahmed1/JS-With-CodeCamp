@@ -22,15 +22,21 @@ const storyObj = {
 };
 
 function displayStory(genre) {
-   if (storyObj.hasOwnProperty(genre)){
+  if (storyObj.hasOwnProperty(genre)) {
     const resultPara = document.getElementById("result");
     resultPara.textContent = storyObj[genre].story;
 
-    const storyContainer = document.getElementById("story-container");
     storyContainer.style.borderColor = storyObj[genre].borderColor;
-   }
+  }
 }
-displayStory("scary");
 
 
-scaryStoryBtn.addEventListener("click", displayStory);
+//normal function
+scaryStoryBtn.addEventListener("click", function() {
+  displayStory("scary");
+});
+
+//arrow function used
+funnyStoryBtn.addEventListener("click", () => displayStory("funny"));
+adventureStoryBtn.addEventListener("click", () => displayStory("adventure"));
+
