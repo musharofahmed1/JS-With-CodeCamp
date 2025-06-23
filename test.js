@@ -210,14 +210,24 @@ function isObject(obj) {
 
 // console.log(x);
 
-function trackTotal(initialValue) {
-  let total = initialValue;
-  return function(increment) {
-    total += increment;
-    return total;
-  };
-}
+// function trackTotal(initialValue) {
+//   let total = initialValue;
+//   return function(increment) {
+//     total += increment;
+//     return total;
+//   };
+// }
 
-let track = trackTotal(1);
-console.log(track(2));
-console.log(track(3));
+// let track = trackTotal(1);
+// console.log(track(2));
+// console.log(track(3));
+// console.log([, undefined, 'a', 'b', { 20: 5 }].sort());
+// let numbers = [2, 4, 8, 10];
+
+// numbers.forEach(function(number) {
+//     console.log(number % 2);
+// });
+const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
+const filteredArray = originalArray.filter(item => item.id > 1);
+filteredArray[0].id = 4;
+console.log(filteredArray)

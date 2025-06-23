@@ -17,30 +17,34 @@ let library = [{
 
 ];
 
+//map function used
 function displayBooks(books){
   return books.map(book => `${book.title}, ${book.author},${book.pages}`).join();
 }
-
+//map function
 function getBookSummaries(booksArray){
  const result = booksArray.map(books => books.about);
  return result;
 }
 
+//filter function used to find 
 function getBooksByAuthor(bookObjects,authorName){
   const result = bookObjects.filter(authorN => authorN.author==authorName);
   return result;
 }
+
+//reduce function used to get output
 function getTotalPages(booksArray) {
   return booksArray.reduce((total, book) => total + book.pages, 0);
 }
 
-const libraryBooks = displayBooks(library);
-const bookSummaries = getBookSummaries(library);
-const booksByArvidKahl = getBooksByAuthor(library, "Arvid Kahl");
-const totalPagesOfBooksInLibrary = getTotalPages(library);
 
-console.log(libraryBooks);
-console.log(bookSummaries);
-console.log(booksByArvidKahl);
-console.log(totalPagesOfBooksInLibrary);
+/*Create four new variables: libraryBooks, bookSummaries,
+ booksByArvidKahl, and totalPagesOfBooksInLibrary. Set them all to the calling of displayBooks(), 
+ getBookSummaries(), getBooksByAuthor(), and getTotalPages() respectively with the appropriate
+parameters.
+
+Log all the variables to the console.
+
+With that, your library manager workshop is complete. */
 
