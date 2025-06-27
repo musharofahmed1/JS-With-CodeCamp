@@ -12,3 +12,11 @@ const instrumentsArr = [
   { category: "percussion", instrument: "Marimba", price: 3000 }
 
 ];
+
+const selectContainer = document.querySelector(".select-container");
+const productsContainer = document.querySelector(".products-container");
+
+selectContainer.addEventListener("change", function(event) {
+  console.log(event.target.value);
+});
+
