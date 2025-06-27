@@ -16,7 +16,21 @@ const instrumentsArr = [
 const selectContainer = document.querySelector(".select-container");
 const productsContainer = document.querySelector(".products-container");
 
-selectContainer.addEventListener("change", function(event) {
-  console.log(event.target.value);
+selectContainer.addEventListener("change", () => {
+  productsContainer.innerHTML = instrumentCards(selectContainer.value).join("");
 });
 
+
+function instrumentCards(instrumentCategory) {
+  const filteredInstruments = instrumentCategory === "all"
+    ? instrumentsArr
+    : instrumentsArr.filter(item => item.category === instrumentCategory);
+
+  return filteredInstruments.map(item => {
+    return `<div class="card"><h2>${item.instrument}</h2><p>$${item.price}</p></div>`;
+  });
+}
+
+selectContainer.addEventListener("change", () => {
+  console.log(instrumentCards(selectContainer.value));
+});
