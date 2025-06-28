@@ -9,4 +9,4 @@
 // console.log("freecoooooooodecamp".replace(regex, "paidcodeworld"));
 
 const regex = /free(co+de)camp/i;
-console.log("freecoooooooodecamp".replace(regex, "paid$1world")); 
+console.log("freecoooooooodecamp".replace(regex, "paid$1world")); //paidcoooooooodeworld
