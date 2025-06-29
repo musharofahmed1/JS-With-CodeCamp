@@ -120,9 +120,9 @@
 //   console.log(person[prop]);
 // }
 
-function isObject(obj) {
-  return typeof obj === 'object' && !Array.isArray(obj) && obj !== null;
-}
+// function isObject(obj) {
+//   return typeof obj === 'object' && !Array.isArray(obj) && obj !== null;
+// }
 
 // for (const prop in person) {
 //   if (isObject(person[prop])) {
@@ -227,7 +227,11 @@ function isObject(obj) {
 // numbers.forEach(function(number) {
 //     console.log(number % 2);
 // });
-const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
-const filteredArray = originalArray.filter(item => item.id > 1);
-filteredArray[0].id = 4;
-console.log(filteredArray)
+// const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
+// const filteredArray = originalArray.filter(item => item.id > 1);
+// filteredArray[0].id = 4;
+// console.log(filteredArray)
+
+const regex = /freeCodeCamp/;
+const test = regex.test("freeCdeCamp");
+console.log(test);
