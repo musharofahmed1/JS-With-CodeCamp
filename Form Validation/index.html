@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body>
+  <form>
+    <label>Enter your email: </label>
+    <input required placeholder="username@sampleCompany.com" type="email" pattern=".+@sampleCompany\.com" />
+    <br><br>
+    <label>Enter your feedback: </label>
+    <textarea required placeholder="Your feedback here..."></textarea>
+    <br><br>
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+  <script>
+    const input = document.querySelector('input[type="email"]');
+
+    input.addEventListener("input", (e) => {
+      if (!e.target.checkValidity()) {
+        e.target.setCustomValidity(
+          "You must use a company email address that ends in @sampleCompany.com"
+        );
+      } else {
+        e.target.setCustomValidity("");
+      }
+    });
+  </script>
+</body>
+</html>
