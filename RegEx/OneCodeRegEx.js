@@ -60,3 +60,22 @@ const start = /^freeCodeCamp/i;
 const end = /freeCodeCamp$/i;
 console.log(start.test("freecodecamp")); // true
 console.log(end.test("freecodecamp")); // true
+
+//m Flag: Anchors look for the beginning and end of the entire string. But you can make a regex 
+// handle multiple lines with the m flag, or the multi-line modifier.flag, or the multi-line 
+// modifier
+
+const startMFlag = /^freecodecamp/im;
+const endMFlag = /freecodecamp$/im;
+const strMFlag = `I love 
+freecodecamp
+it's my favorite
+`;
+console.log(startMFlag.test(strMFlag)); // true
+console.log(endMFlag.test(strMFlag)); // true
+
+//d Flag: This flag expands the information you get in a match object.
+
+const regexDFlag = /freecodecamp/di;
+const stringDFlag = "we love freecodecamp isn't freecodecamp great?";
+console.log(string.match(regexDFlag));
