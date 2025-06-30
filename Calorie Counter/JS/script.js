@@ -7,8 +7,22 @@ const output = document.getElementById('output');
 let isError = false;
 
 function cleanInputString(str) {
- console.log("original string: ",str)  
+ //console.log("original string: ",str)  
  const regex = /[+-\s]/g;
  return str.replace(regex, "")
 }
-console.log(cleanInputString("+-99"))
+//console.log(cleanInputString("+-99"))
+
+function isInvalidInput(str) {
+  const regex = /\d+e\d+/i;
+  return str.match(regex);
+}
+
+function addEntry() {
+  const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+  const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+  const HTMLString = `  <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+  <input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name">
+  `
+  
+};

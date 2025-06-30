@@ -22,4 +22,6 @@ console.log(year);
 // Output: 2025
 
 console.log(Date.now())
+//
 //others method: getHours, getMinutes, getSeconds
+//1751270980615
