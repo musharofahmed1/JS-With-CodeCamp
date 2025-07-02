@@ -9,3 +9,10 @@ const Dog = class {
 };;
 const dog = new Dog("Gino");
 console.log(dog.name);
+
+//constractor
+// class Dog {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }

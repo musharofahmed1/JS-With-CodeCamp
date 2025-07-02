@@ -1,5 +1,4 @@
 const instrumentsArr = [
-
   { category: "woodwinds", instrument: "Flute", price: 500 },
   { category: "woodwinds", instrument: "Clarinet", price: 200 },
   { category: "woodwinds", instrument: "Oboe", price: 4000 },
@@ -10,27 +9,31 @@ const instrumentsArr = [
   { category: "percussion", instrument: "Xylophone", price: 3000 },
   { category: "percussion", instrument: "Cymbals", price: 200 },
   { category: "percussion", instrument: "Marimba", price: 3000 }
+]
 
-];
-
-const selectContainer = document.querySelector(".select-container");
+const selectContainer = document.querySelector("select");
 const productsContainer = document.querySelector(".products-container");
 
-selectContainer.addEventListener("change", () => {
-  productsContainer.innerHTML = instrumentCards(selectContainer.value).join("");
-});
-
-
 function instrumentCards(instrumentCategory) {
-  const filteredInstruments = instrumentCategory === "all"
-    ? instrumentsArr
-    : instrumentsArr.filter(item => item.category === instrumentCategory);
+  const instruments =
+    instrumentCategory === "all"
+      ? instrumentsArr
+      : instrumentsArr.filter(
+          ({ category }) => category === instrumentCategory
+        );
 
-  return filteredInstruments.map(item => {
-    return `<div class="card"><h2>${item.instrument}</h2><p>$${item.price}</p></div>`;
-  });
+  return instruments
+    .map(({ instrument, price }) => {
+      return `
+          <div class="card">
+            <h2>${instrument}</h2>
+            <p>$${price}</p>
+          </div>
+        `;
+    }) 
+     .join("");
 }
 
 selectContainer.addEventListener("change", () => {
-  console.log(instrumentCards(selectContainer.value));
+  productsContainer.innerHTML = instrumentCards(selectContainer.value);
 });
