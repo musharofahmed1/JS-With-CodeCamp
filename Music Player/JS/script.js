@@ -1,10 +1,8 @@
-const playlistSongs = document.getElementById('playlist-songs');
-const playButton = document.getElementById('play');
-const pauseButton = document.getElementById('pause');
-
-const nextButton = document.getElementById('next');
-const previousButton = document.getElementById('previous');
-
+const playlistSongs = document.getElementById("playlist-songs");
+const playButton = document.getElementById("play");
+const pauseButton = document.getElementById("pause");
+const nextButton = document.getElementById("next");
+const previousButton = document.getElementById("previous");
 const allSongs = [
   {
     id: 0,
@@ -77,3 +75,57 @@ const allSongs = [
     src: "https://cdn.freecodecamp.org/curriculum/js-music-player/chasing-that-feeling.mp3",
   },
 ];
+
+const audio = new Audio();
+
+const userData = {
+  songs: allSongs,
+  currentSong: null,
+  songCurrentTime: 0,
+}
+
+const playSong = id => {
+  const song = userData.songs.find((song) => song.id === id);
+  audio.src = song.src;
+  audio.title = song.title;
+  if (userData.currentSong === null) {
+    audio.currentTime = 0
+  } else {
+    audio.currentTime = userData.songCurrentTime;
+  }
+  userData.currentSong = song;
+  playButton.classList.add("playing");
+  audio.play()
+}
+
+const pauseSong = () => {
+  userData.songCurrentTime = audio.currentTime;
+  playButton.classList.remove("playing");
+  audio.pause();
+}
+
+const getCurrentSongIndex = () => userData.songs.indexOf(userData.currentSong);
+
+const getNextSong = () => userData.songs[getCurrentSongIndex() + 1];
+
+
+
+playButton.addEventListener("click", () => {
+  if (userData.currentSong === null) {
+    playSong(userData.songs[0].id);
+  } else {
+    playSong(userData.currentSong.id);
+  }
+});
+
+const songs = document.querySelectorAll(".playlist-song");
+
+songs.forEach((song) => {
+  const id = song.getAttribute("id").slice(5);
+  const songBtn = song.querySelector("button");
+  songBtn.addEventListener("click", () => {
+      playSong(Number(id));
+  })
+})
+
+pauseButton.addEventListener("click", pauseSong);
