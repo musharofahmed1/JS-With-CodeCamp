@@ -52,6 +52,7 @@ const updateResultsList = () => {
   });
 }
 
-recipeForm.addEventListener("submit",()=>{
-  updateResultsList()
+recipeForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  updateResultsList();
 });
