@@ -15,7 +15,7 @@ console.log(gramsResult);
 
 const adjustForServings = (baseQuantity) => (newServings) =>
   (baseQuantity / 1) * newServings;
-
+ 
 const servingsResult = adjustForServings(4)(6);
 console.log(servingsResult);
 

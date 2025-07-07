@@ -42,4 +42,19 @@ catalog.set(hidcote, { small: 33, medium: 13, large: 18 });
 catalog.set(imperialGem, { small: 19, medium: 35, large: 28 });
 catalog.set(royalCrown, { small: 40, medium: 22, large: 9 });
 
+const removePlant = plant => catalog.delete(plant);
+
+console.log(removePlant(ballerina));
+const sellPlants = (plant, size, potsNo) => {
+
+    const name = `${plant.scientificName} '${plant.cultivar}'`
+    const pots = catalog.get(plant);
+    if (pots[size] - potsNo < 0) {
+        return `Not enough ${size} size pots for ${name}. Only ${pots[size]} left.`
+    }
+    pots[size] -= potsNo;
+    return `Catalog successfully updated.`
+}
+console.log(sellPlants(ballerina, "small", 10));
+
 console.log(catalog)
