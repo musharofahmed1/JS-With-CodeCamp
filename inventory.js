@@ -1,64 +1,101 @@
-//https://www.freecodecamp.org/learn/full-stack-developer/lab-inventory-management-program/build-an-inventory-management-program
-
-// Declare an empty inventory array
+// ✅ Declare an empty inventory array
+// This array will store product objects with two keys: 
+// - name: a lowercase string
+// - quantity: an integer
 const inventory = [];
 
-// Function to find the index of a product by name
+// ✅ Function to find the index of a product by its name
 function findProductIndex(productName) {
+  // Convert the input productName to lowercase to ensure case-insensitive matching
   const lowerName = productName.toLowerCase();
+
+  // Use .findIndex() to search through the inventory array for a product 
+  // whose 'name' property matches 'lowerName'
+  // - If found, returns the index (position) of that product
+  // - If not found, returns -1
   return inventory.findIndex(product => product.name === lowerName);
-  /* ✅ What it does:
-  This line uses the .findIndex() method to search through the inventory array.
-  It looks for the first object where the name matches the lowerName string you passed in.
-  If it finds it — it returns the index (position number).
-  If not — it returns -1.*/
+
+  /*
+  📌 How it works:
+  - Loops over each product in the inventory array
+  - Compares product.name with the lowerName
+  - Stops and returns the index of the first match
+  - If no match, it returns -1
+  */
 }
 
-//Function to add a product (object) to the inventory
+// ✅ Function to add a product (object) to the inventory
 function addProduct(product) {
+  // Convert the product's name to lowercase for consistent storage and comparison
   const lowerName = product.name.toLowerCase();
+
+  // Find the index of the product in the inventory, if it already exists
   const index = findProductIndex(lowerName);
 
+  // Check if the product already exists in inventory
   if (index !== -1) {
-    // Product exists — update quantity
-    inventory[index].quantity += product.quantity; 
-    //This line updates the quantity of an existing product in the inventory.
+    // ✅ If product exists — update its quantity by adding the new quantity
+    inventory[index].quantity += product.quantity;
+
+    /*
+    📌 What happens here:
+    - Access the product at 'index' inside inventory
+    - Increase its quantity by product.quantity
+    */
+
+    // Log that the product quantity has been updated
     console.log(`${lowerName} quantity updated`);
   } else {
-    // Product not found — add to inventory
+    // ✅ If product not found — add the new product object to inventory
     inventory.push({
-      name: lowerName,
-      quantity: product.quantity
+      name: lowerName,        // Store product name in lowercase
+      quantity: product.quantity  // Store the quantity
     });
+
+    // Log that the product was added to inventory
     console.log(`${lowerName} added to inventory`);
   }
 }
 
-// Function to remove quantity of a product
+// ✅ Function to remove a quantity of a product from inventory
 function removeProduct(productName, quantityToRemove) {
+  // Convert the product name to lowercase for consistent searching
   const lowerName = productName.toLowerCase();
+
+  // Find the index of the product in the inventory
   const index = findProductIndex(lowerName);
 
+  // ✅ If product not found — log an appropriate message
   if (index === -1) {
-    // Product not found
     console.log(`${lowerName} not found`);
   } else {
+    // ✅ Product exists — get its current quantity
     const currentQuantity = inventory[index].quantity;
 
+    // ✅ If there's not enough stock to remove the requested quantity
     if (currentQuantity < quantityToRemove) {
-      // Not enough stock
       console.log(`Not enough ${lowerName} available, remaining pieces: ${currentQuantity}`);
     } else {
-      // Subtract quantity
+      // ✅ Subtract the requested quantity from the product's quantity
       inventory[index].quantity -= quantityToRemove;
 
+      // ✅ If quantity becomes zero after subtraction — remove the product object from inventory
       if (inventory[index].quantity === 0) {
-        // Remove product if quantity is zero
-        inventory.splice(index, 1);
+        inventory.splice(index, 1);  // Remove one item at 'index' position
       } else {
-        // Log remaining quantity
+        // ✅ If some stock remains, log how many pieces are left
         console.log(`Remaining ${lowerName} pieces: ${inventory[index].quantity}`);
       }
     }
   }
 }
+
+/*
+📌 Summary of how this inventory system works:
+- inventory is an array of objects like: { name: "flour", quantity: 10 }
+- findProductIndex() finds where a product is inside inventory (or returns -1 if not found)
+- addProduct() either adds a new product or increases the quantity if it already exists
+- removeProduct() subtracts quantity, removes product if quantity hits zero, 
+  or warns if stock is too low or product not found
+- All names are handled in lowercase to avoid case-sensitivity issues
+*/
