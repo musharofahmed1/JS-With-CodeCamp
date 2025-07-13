@@ -14,3 +14,7 @@ const allCategories = {
   432: { category: 'You Can Do This!', className: 'motivation' },
   560: { category: 'Backend Development', className: 'backend' }
 };
+
+function timeAgo(timestamp){
+    if(timestamp )
+}
